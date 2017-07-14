@@ -1,0 +1,14 @@
+(ns first-app.core
+  (:gen-class))
+
+(defn add
+  [a b]
+  (+ a b))
+
+(defn -main
+  "I Don't Do a whole lot ... yet."
+  [& args]
+  (println "Hello, World!" (add 1 2)))
+
+(defn train [] (println"Choo choo"))
+(defn addn [a b c] (+ 1 3 4))

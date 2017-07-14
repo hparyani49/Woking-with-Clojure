@@ -1,0 +1,12 @@
+(ns first-app.core
+  (:gen-class))
+
+(defn add
+  [a b]
+  (+ a b))
+
+(defn -main
+  "I Don't Do a whole lot ... yet."
+  [& args]
+  (println "Hello, World!" (add 1 2)))
+
