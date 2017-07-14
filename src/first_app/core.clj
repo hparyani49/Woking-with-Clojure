@@ -1,26 +1,25 @@
 (ns first-app.core  (:gen-class))
+
 (defn error [diff]
  (str "this is"
  (if (= diff "very")
  "very diff"
  "easy")))
+
 (defn add
   [a b]
   (+ a b))
-(defn app [a b] (if true
-                  (do (+ a b))
-))
+
+
+(defn app [a b]
+  (if true
+    (do (+ a b))))
+
+
 (defn -main
   "I Don't Do a whole lot ... yet."
   [& args]
   (println "Hello, World!" (add 1 2)))
-(defn train [] (println"Choo choo"))
-(defn addn [a b c] (* (+ a b) c))
-
-(defn cond [a b] ( if (= a b)
-                "This is true"
-                "This is false"
-                ))
 
 
 (defn mult
@@ -49,10 +48,9 @@
 
 (defn myreduce
   ([f arr]
-   (myreduce f arr (f)))
   (if-not (empty? arr)
       (f (first arr) (myreduce f (rest arr)))
-      (f))
+      (f)))
 
   ([f arr acc]
    (if-not (empty? arr)
@@ -66,7 +64,7 @@
 
 (defn myfilter [f arr]
   (when-not (empty? arr)
-    (if (= (f (first arr)) true)
+    (if (f (first arr))
       (cons (first arr) (myfilter f (rest arr)))
       (myfilter f (rest arr)))))
 
@@ -92,7 +90,7 @@
 ;;take-while
 
 (defn mytakewhile [f arr]
-  (if (= (f (first arr)) true)
+  (if (f (first arr))
     (cons (first arr) (mytakewhile f  (rest arr)))))
 
 
@@ -110,9 +108,11 @@
 ;;some
 
 (defn mysome [f arr]
-  (if (= (f (first arr)) true)
+  (if (empty? arr)
+    false
+  (if (f (first arr))
     true
-    (mysome f (rest arr))))
+    (mysome f (rest arr)))))
 
 
 
@@ -136,7 +136,7 @@
 ;;concat
 
 (defn myconcat-helper [new old]
-  )
+ (into new old) )
 (defn myconcat [& more]
   (myconcat-helper [] more ))
 
@@ -166,7 +166,8 @@
 ;;partial
 
 (defn my-partial [f & args]
-  (fn [& arr]
+  (fn
+    [& arr]
     (apply  f (into args arr))))
 
 (def mypartial (my-partial + 10))
@@ -179,29 +180,6 @@
 
 ;;sort-by
 
-(defn conv [f arr]
-  (let [ new2 (my-hash-map f arr {})]
-  (mysortby new2 {})))
-
-(defn my-hash-map [fu arg new]
-  (if (empty? arg)
-    new
-    (my-hash-map fu (rest arg) (into new { (fu (first arg)) (first arg)}))))
-
-
-(defn my-remove-helper [f arr new]
-  (if (or (empty? arr) (f (first (first arr))))
-    (concat new (rest arr))
-    (my-remove-helper f (rest arr) (conj new  (first arr)))))
-
-(defn mysortby [arr new]
-  (if (empty? arr)
-    new
-    (do (let [min-arr (min (first arr))]
-          (recur (my-remove min arr)
-                 (conj new min-arr))))))
-
-(defn my-remove [f arr] (my-remove-helper f arr []))
 
 
 
@@ -217,13 +195,13 @@
     (recur (mod-decider acc (first arr)) (rest arr))))
 
 
-(defn mod-min-helper [arr]
+#_(defn mod-min-helper [arr]
   (mod-min-helper-helper (first arr)
                          (rest arr)))
 (defn mod-min [& args]
  (if (empty? (rest args))
    (first args)
-   (mod-min-helper args)))
+   (mod-min-helper-helper (first args) (rest args))))
 
 
 (defn hash-map-helper [f arr new]
