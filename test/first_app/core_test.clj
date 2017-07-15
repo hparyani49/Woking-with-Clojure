@@ -3,11 +3,12 @@
             [first-app.core :refer :all]
             [expectations :as expect]))
 
-(deftest a-test
+#_(deftest a-test
   (testing "FIXME, I fail."
    (is (= 1 1))))
 
-(expect/expect nil? nil )
+(expect/expect nil? nil)
+
 ;;add
 (expect/expect (= 3 (add 1 2)))
 (expect/expect (= 4 (add 1 3)))
@@ -89,7 +90,7 @@
 ;;into
 
 (expect/expect [1 2 3 4] (my-into [1 2] [3 4]))
-(expect/expect [1 2] (my-into [1 2 ] [ ]))
+(expect/expect [1 2] (my-into [1 2 ] []))
 
 
 ;;concat
@@ -102,8 +103,6 @@
 (expect/expect 13 (mypartial 3))
 (expect/expect 23 (mypartial 13))
 
-
-
 ;;my-hash-map
 
 (expect/expect {"a" 1 "bb" 2 } (my-hash-map count ["a" "bb"]))
@@ -111,7 +110,7 @@
 ;;sort-by
 
 (expect/expect ["a" "bb" "ccc"] (my-sort-by count ["bb" "ccc" "a"]))
-#_(expect/expect ["a" "bb" "dd" "ccc"] (my-sort-by count ["bb" "ccc" "a" "dd"]))
+;;(expect/expect ["a" "bb" "dd" "ccc"] (my-sort-by count ["bb" "ccc" "a" "dd"]))
 
 ;;decide
 
@@ -142,3 +141,10 @@
 ;;cust-sort
 
 (expect/expect ["a" "bb"] (cust-sort {"a" 1 "bb" 2}))
+
+
+
+;;comp
+
+(expect/expect 6 (mycomp-helper [inc] 5))
+(expect/expect 6 ((mycomp inc +) 5))

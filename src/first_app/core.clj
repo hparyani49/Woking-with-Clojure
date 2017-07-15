@@ -48,7 +48,8 @@
 
 (defn myreduce
   ([f arr]
-  (if-not (empty? arr)
+   (myreduce f arr 0)
+ #_ (if-not (empty? arr)
       (f (first arr) (myreduce f (rest arr)))
       (f)))
 
@@ -239,3 +240,34 @@
 
 (defn my-sort-by [f arr]
   (cust-sort (my-hash-map f arr)))
+
+
+
+
+
+
+;;comp [1 2 3] []
+(defn myrev [a b]
+  (if (empty? a)
+    b
+    (myrev (rest a) (cons (first a) b))) )
+
+;;(defn test2)
+
+(defn mycomp-helper [func vals]
+  (if (empty? func)
+    vals
+    (recur (rest func) ((first func) vals))))
+
+
+(defn mycomp [& args]
+  (let [new (reverse args)]
+    (fn [& arr] (mycomp-helper (rest new) (apply (first new) arr)))))
+
+
+
+
+(defn myeven
+  ([] (myeven 0))
+
+  ([n] (cons n (lazy-seq (even (+ n 2))))))
