@@ -1,0 +1,6 @@
+(autotest)
+(in ns quux.core)
+(use 'midje.repl.)
+(use 'midje.repl)
+(in ns quux.core)
+(autotest)
