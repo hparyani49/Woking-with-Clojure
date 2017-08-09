@@ -1,11 +1,23 @@
 (ns todo.core
-  (:require [reagent.core :as r]
-            [ajax.core :refer [GET POST]]))
+  (:require [ajax.core :refer [GET POST]]
+            [secretary.core :as secretary :refer-macros [defroute]]
+            [reagent.core :as r]
+            [reagent.session :as session]
+            [accountant.core :as accountant]))
+
+(accountant/configure-navigation!
+   {:nav-handler
+    (fn [path] (secretary/dispatch! path))
+    :path-exists?
+    (fn [path] (secretary/locate-route path))})
 
 (def todo-list (r/atom []))
 (def user-name (r/atom ""))
-(def page (r/atom :login))
+#_(def page (r/atom :login))
 (def server "http://localhost:3000/")
+
+(defn page []
+  [(session/get :current-page)])
 
 (defn get-by-id [id] (.getElementById js/document id))
 
@@ -16,7 +28,7 @@
 
 (defn update-task []
   (js/alert "Updated")
-  (reset! page :home))
+  (secretary/dispatch! "/addtodo"))
 
 (defn update-page []
   [:div
@@ -53,7 +65,7 @@
   [response]
   (if (= 1 (count response))
     (do (reset! user-name (get-in response [0 :username]))
-        (reset! page :home))
+        (secretary/dispatch! "/addtodo"))
     (js/alert "Invalid Credentials")))
 
 (defn login-page []
@@ -150,11 +162,11 @@
                    :placeholder "Status?"}]
      [:input {:type "submit" :value "Submit or Get-Tasks"}]]
     [:div [:input {:disabled true :type "text" :id "str1"}]]]
-   [:button {:on-click #(reset! page :login)} "Logout"]
-   [:button {:on-click #(reset! page :update)} "Update"]
+   [:button {:on-click #(secretary/dispatch! "/")} "Logout"]
+   [:button {:on-click #(secretary/dispatch! "/update-todo")} "Update"]
    [task-list]])
 
-(defn show-page
+#_(defn show-page
   "Selects which page to show"
   []
   [:div.container
@@ -163,11 +175,26 @@
      :home [home-page]
      :update [update-page])])
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Secretary
+
+(secretary/set-config! :prefix "#")
+
+(secretary/defroute "/" []
+  (session/put! :current-page login-page))
+
+(secretary/defroute "/addtodo" []
+  (session/put! :current-page home-page))
+
+(secretary/defroute "/update-todo" []
+  (session/put! :current-page update-page))
+
 ;; -------------------------
 ;; Initialize app
 
 (defn mount-components []
-  (r/render [show-page] (.getElementById js/document "app")))
+  (session/put! :current-page login-page)
+  (r/render [page] (.getElementById js/document "app")))
 
 (defn init! []
   (mount-components))

@@ -59,6 +59,10 @@
 (secretary/defroute "/about" []
   (session/put! :page :about))
 
+(secretary/defroute "/users/:id/:name" {:as params}
+  (js/console.log (str "User: " (:id params))))
+
+(secretary/dispatch! "/users/gf3/hssd")
 ;; -------------------------
 ;; History
 ;; must be called after routes have been defined

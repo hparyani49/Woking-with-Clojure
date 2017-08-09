@@ -1,0 +1,113 @@
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.608 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.509 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.361 seconds.[0m
+[36m----  Could not Analyze  src/cljs/boots/core.cljs  ----[0m
+
+  [1mNo such namespace: accountant.core, could not locate accountant/core.cljs, accountant/core.cljc, or JavaScript source providing "accountant.core" [0m
+
+[36m----  Analysis Error : Please see src/cljs/boots/core.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.252 seconds.[0m
+[36m----  Could not Analyze  src/cljs/boots/core.cljs  ----[0m
+
+  [1mNo such namespace: accountant.core, could not locate accountant/core.cljs, accountant/core.cljc, or JavaScript source providing "accountant.core" [0m
+
+[36m----  Analysis Error : Please see src/cljs/boots/core.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.485 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.017 seconds.[0m
+[36m----  Could not Analyze  src/cljs/boots/core.cljs   line:1  column:1  ----[0m
+
+  [1mOnly :as alias, :refer (names) and :rename {from to} options supported in :require; offending spec: [ajax.core :refer [GET POST] [accountant.core :as accountant]] at line 1 src/cljs/boots/core.cljs[0m
+
+  [33m1[0m  [1m(ns boots.core[0m
+  [0m [0m  [33m^--- Only :as alias, :refer (names) and :rename {from to} options supported in :require; offending spec: [ajax.core :refer [GET POST] [accountant.core :as accountant]] at line 1 src/cljs/boots/core.cljs[0m
+  [36m2[0m  [36m  (:require [reagent.core :as r][0m
+  [36m3[0m  [36m            [reagent.session :as session][0m
+  [36m4[0m  [36m            [secretary.core :as secretary :include-macros true][0m
+
+[36m----  Analysis Error : Please see src/cljs/boots/core.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.241 seconds.[0m
+[36m----  Could not Analyze  src/cljs/boots/core.cljs  ----[0m
+
+  [1mNo such namespace: accountant.core, could not locate accountant/core.cljs, accountant/core.cljc, or JavaScript source providing "accountant.core" [0m
+
+[36m----  Analysis Error : Please see src/cljs/boots/core.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.464 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.494 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/boots/core.cljs   line:71  column:9  ----[0m
+
+  [1mUse of undeclared Var boots.core/History[0m
+
+  [36m67[0m  [36m;; -------------------------[0m
+  [36m68[0m  [36m;; History[0m
+  [36m69[0m  [36m;; must be called after routes have been defined[0m
+  [36m70[0m  [36m(defn hook-browser-navigation! [][0m
+  [33m71[0m  [1m  (doto (History.)[0m
+  [0m  [0m  [33m        ^--- Use of undeclared Var boots.core/History[0m
+  [36m72[0m  [36m        (events/listen[0m
+  [36m73[0m  [36m          HistoryEventType/NAVIGATE[0m
+  [36m74[0m  [36m          (fn [event][0m
+  [36m75[0m  [36m              (secretary/dispatch! (.-token event))))[0m
+  [36m76[0m  [36m        (.setEnabled true)))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/boots/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/boots/core.cljs   line:71  column:9  ----[0m
+
+  [1mUse of undeclared Var boots.core/History[0m
+
+  [36m67[0m  [36m;; -------------------------[0m
+  [36m68[0m  [36m;; History[0m
+  [36m69[0m  [36m;; must be called after routes have been defined[0m
+  [36m70[0m  [36m(defn hook-browser-navigation! [][0m
+  [33m71[0m  [1m  (doto (History.)[0m
+  [0m  [0m  [33m        ^--- Use of undeclared Var boots.core/History[0m
+  [36m72[0m  [36m        (events/listen[0m
+  [36m73[0m  [36m          HistoryEventType/NAVIGATE[0m
+  [36m74[0m  [36m          (fn [event][0m
+  [36m75[0m  [36m              (secretary/dispatch! (.-token event))))[0m
+  [36m76[0m  [36m        (.setEnabled true)))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/boots/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.479 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.452 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.418 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.241 seconds.[0m
+[36m----  Could not Analyze  src/cljs/boots/core.cljs  ----[0m
+
+  [1mNo such namespace: accountant.core, could not locate accountant/core.cljs, accountant/core.cljc, or JavaScript source providing "accountant.core" [0m
+
+[36m----  Analysis Error : Please see src/cljs/boots/core.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.257 seconds.[0m
+[36m----  Could not Analyze  src/cljs/boots/core.cljs  ----[0m
+
+  [1mNo such namespace: accountant.core, could not locate accountant/core.cljs, accountant/core.cljc, or JavaScript source providing "accountant.core" [0m
+
+[36m----  Analysis Error : Please see src/cljs/boots/core.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.461 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
