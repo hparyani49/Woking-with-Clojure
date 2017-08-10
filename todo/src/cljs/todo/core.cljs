@@ -65,13 +65,14 @@
   [response]
   (if (= 1 (count response))
     (do (reset! user-name (get-in response [0 :username]))
-        (secretary/dispatch! "/addtodo"))
+        (secretary/dispatch! "/addtodo")
+        (log @user-name))
     (js/alert "Invalid Credentials")))
 
 (defn login-page []
   [:div
-   [:h2 "Welcome to your To-Do"]
-   [:h3 "Please Login to continue"]
+   [:h2  "Welcome to your To-Do"]
+   #_[:h3  "Please login to continue"]
    [:form {:action "#"
            :on-submit (fn [e]
                         (let [uid (.-value (get-by-id "username"))
@@ -91,7 +92,7 @@
                    :type "password"
                    :placeholder "Password"}]]
     [:div [:input {:type "submit"
-                   :value "Submit"}]]]])
+                   :value "Login"}]]]])
 
 
 (defn show-output
@@ -112,7 +113,7 @@
 (defn task-list
   "Component which shows a list of task"
   []
-  [:div [:h2 "Your Tasks Are, Click over them to mark them done"]
+  [:div [:h3 "Your Tasks Are, Click over them to mark them done"]
    [:ul
     (doall (map (fn [x] ^{:key x} [:li {:on-click (fn [e]
                                                      (let [u @user-name
@@ -147,10 +148,11 @@
                                  :keywords? true
                                  :handler show-output
                                  :error-handler error-handler})))}
-    [:div [:input {:type "text"
-                   :id "user"
-                   :placeholder @user-name
-                   :disabled true}]]
+    [:div  [:input {:type "text"
+                      :id "user"
+                      :placeholder @user-name
+                      :disabled true
+                      :class "input1"}]]
     [:div [:input {:type "text"
                    :id "name"
                    :placeholder "Task-Name"}]]

@@ -1,7 +1,11 @@
 html,
-body {
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+body{
+	  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     height: 100%;
+    background-image: url("1.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }
 .navbar {
   margin-bottom: 10px;
@@ -67,3 +71,45 @@ body {
     }
 }
 
+h2{
+    text-align: center;
+    font-family: 'Times new roman', Helvetica, Arial, sans-serif;
+    text-shadow: 3px 2px red;
+    font-size: 50px;
+    color: cyan;
+}
+
+h3{
+    text-align: center;
+    font-family: 'Helvetica', Helvetica, Arial, sans-serif;
+    font-size: 50px;
+    color: pink;
+}
+
+.abcd1 {
+    background-image: url("Clock-Images-For-Computer.jpg");
+}
+
+input {
+     border: 5px solid white;
+    -webkit-box-shadow:
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1);
+    -moz-box-shadow:
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1);
+    box-shadow:
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1);
+    padding: 15px;
+    background: rgba(255,255,255,0.5);
+    margin: 0 0 10px 0;
+        }
+
+button {
+    background: #cb4e4e;
+color: #fff;
+-webkit-transition: none;
+-moz-transition: none;
+transition: none;
+}

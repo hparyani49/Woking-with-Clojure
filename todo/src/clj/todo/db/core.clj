@@ -32,8 +32,10 @@
 
 (defn change-status [username task-name]
   (mc/update db "To-Dos" {:user username :name task-name}
-             {$set {:status "done"}}))
+             {$set {:status "done"}}
+             {:multi true}))
 
 (defn update-task [username task-name new-desc]
   (mc/update db "To-Dos" {:user username :name task-name}
-             {$set {:desc new-desc}}))
+             {$set {:desc new-desc}}
+             {:multi true}))
