@@ -39,14 +39,14 @@
                               n (.-value (get-by-id "name"))
                               d (.-value (get-by-id "desc"))]
                           (GET (str server "update-task")
-                                {:params {:u u
-                                          :n n
-                                          :d d}
-                                 :format :json
-                                 :response-format :json
-                                 :keywords? true
-                                 :handler update-task
-                                 :error-handler error-handler})))}
+                               {:params {:u u
+                                         :n n
+                                         :d d}
+                                :format :json
+                                :response-format :json
+                                :keywords? true
+                                :handler update-task
+                                :error-handler error-handler})))}
     [:div [:input {:type "text"
                    :id "user"
                    :placeholder @user-name
