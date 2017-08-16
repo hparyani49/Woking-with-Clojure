@@ -1,4 +1,4 @@
-(defproject boots "0.1.0-SNAPSHOT"
+(defproject demo "0.1.0-SNAPSHOT"
 
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
@@ -8,7 +8,7 @@
                  [com.google.guava/guava "20.0"]
                  [com.novemberain/monger "3.1.0" :exclusions [com.google.guava/guava]]
                  [compojure "1.6.0"]
-                 [cprop "0.1.10"]
+                 [cprop "0.1.11"]
                  [funcool/struct "1.0.0"]
                  [luminus-immutant "0.2.3"]
                  [luminus-nrepl "0.1.4"]
@@ -24,6 +24,7 @@
                  [org.webjars.bower/tether "1.4.0"]
                  [org.webjars/bootstrap "4.0.0-alpha.5"]
                  [org.webjars/font-awesome "4.7.0"]
+                 [re-frame "0.9.4"]
                  [reagent "0.7.0"]
                  [reagent-utils "0.2.1"]
                  [ring-webjars "0.2.0"]
@@ -31,9 +32,7 @@
                  [ring/ring-defaults "0.3.1"]
                  [secretary "1.2.3"]
                  [selmer "1.11.0"]
-                 [venantius/accountant "0.2.0"]
-                 [cljs-http "0.1.39"]
-                 [soda-ash "0.3.0"]]
+                 [com.draines/postal "2.0.2"]]
 
   :min-lein-version "2.0.0"
 
@@ -42,7 +41,7 @@
   :test-paths ["test/clj"]
   :resource-paths ["resources" "target/cljsbuild"]
   :target-path "target/%s/"
-  :main ^:skip-aot boots.core
+  :main ^:skip-aot demo.core
 
   :plugins [[lein-cprop "1.0.3"]
             [lein-cljsbuild "1.1.5"]
@@ -73,7 +72,7 @@
 
 
              :aot :all
-             :uberjar-name "boots.jar"
+             :uberjar-name "demo.jar"
              :source-paths ["env/prod/clj"]
              :resource-paths ["env/prod/resources"]}
 
@@ -87,18 +86,18 @@
                                  [binaryage/devtools "0.9.4"]
                                  [com.cemerick/piggieback "0.2.2"]
                                  [doo "0.1.7"]
-                                 [figwheel-sidecar "0.5.11"]]
+                                 [figwheel-sidecar "0.5.12"]]
                   :plugins      [[com.jakemccrary/lein-test-refresh "0.19.0"]
                                  [lein-doo "0.1.7"]
-                                 [lein-figwheel "0.5.11"]
+                                 [lein-figwheel "0.5.12"]
                                  [org.clojure/clojurescript "1.9.854"]]
                   :cljsbuild
                   {:builds
                    {:app
                     {:source-paths ["src/cljs" "src/cljc" "env/dev/cljs"]
-                     :figwheel {:on-jsload "boots.core/mount-components"}
+                     :figwheel {:on-jsload "demo.core/mount-components"}
                      :compiler
-                     {:main "boots.app"
+                     {:main "demo.app"
                       :asset-path "/js/out"
                       :output-to "target/cljsbuild/public/js/app.js"
                       :output-dir "target/cljsbuild/public/js/out"
@@ -121,7 +120,7 @@
                     {:source-paths ["src/cljc" "src/cljs" "test/cljs"]
                      :compiler
                      {:output-to "target/test.js"
-                      :main "boots.doo-runner"
+                      :main "demo.doo-runner"
                       :optimizations :whitespace
                       :pretty-print true}}}}
 

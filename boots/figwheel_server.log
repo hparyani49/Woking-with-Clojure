@@ -111,3 +111,892 @@ notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.
 [0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
 [32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.461 seconds.[0m
 notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.337 seconds.[0m
+[36m----  Could not Analyze  src/cljs/boots/core.cljs  ----[0m
+
+  [1mNo such namespace: reagent-utils.reagent.validation, could not locate reagent_utils/reagent/validation.cljs, reagent_utils/reagent/validation.cljc, or JavaScript source providing "reagent-utils.reagent.validation" [0m
+
+[36m----  Analysis Error : Please see src/cljs/boots/core.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.023 seconds.[0m
+[36m----  Could not Analyze  src/cljs/boots/core.cljs   line:1  column:1  ----[0m
+
+  [1mOnly :as alias, :refer (names) and :rename {from to} options supported in :require; offending spec: [reagent.validation :as utils :refer] at line 1 src/cljs/boots/core.cljs[0m
+
+  [33m1[0m  [1m(ns boots.core[0m
+  [0m [0m  [33m^--- Only :as alias, :refer (names) and :rename {from to} options supported in :require; offending spec: [reagent.validation :as utils :refer] at line 1 src/cljs/boots/core.cljs[0m
+  [36m2[0m  [36m  (:require [reagent.core :as r][0m
+  [36m3[0m  [36m            [reagent.validation :as utils :refer][0m
+  [36m4[0m  [36m            [reagent.session :as session][0m
+
+[36m----  Analysis Error : Please see src/cljs/boots/core.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.019 seconds.[0m
+[36m----  Could not Analyze  src/cljs/boots/core.cljs   line:1  column:1  ----[0m
+
+  [1mDon't know how to create ISeq from: clojure.lang.Symbol[0m
+
+  [33m1[0m  [1m(ns boots.core[0m
+  [0m [0m  [33m^--- Don't know how to create ISeq from: clojure.lang.Symbol[0m
+  [36m2[0m  [36m  (:require [reagent.core :as r][0m
+  [36m3[0m  [36m            [reagent :as utils :refer all][0m
+  [36m4[0m  [36m            [reagent.session :as session][0m
+
+[36m----  Analysis Error : Please see src/cljs/boots/core.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 9.583 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.795 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.697 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/boots/core.cljs   line:146  column:9  ----[0m
+
+  [1mUse of undeclared Var boots.core/History[0m
+
+  [36m142[0m  [36m;; -------------------------[0m
+  [36m143[0m  [36m;; History[0m
+  [36m144[0m  [36m;; must be called after routes have been defined[0m
+  [36m145[0m  [36m(defn hook-browser-navigation! [][0m
+  [33m146[0m  [1m  (doto (History.)[0m
+  [0m   [0m  [33m        ^--- Use of undeclared Var boots.core/History[0m
+  [36m147[0m  [36m        (events/listen[0m
+  [36m148[0m  [36m          HistoryEventType/NAVIGATE[0m
+  [36m149[0m  [36m          (fn [event][0m
+  [36m150[0m  [36m              (secretary/dispatch! (.-token event))))[0m
+  [36m151[0m  [36m        (.setEnabled true)))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/boots/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/boots/core.cljs   line:146  column:9  ----[0m
+
+  [1mUse of undeclared Var boots.core/History[0m
+
+  [36m142[0m  [36m;; -------------------------[0m
+  [36m143[0m  [36m;; History[0m
+  [36m144[0m  [36m;; must be called after routes have been defined[0m
+  [36m145[0m  [36m(defn hook-browser-navigation! [][0m
+  [33m146[0m  [1m  (doto (History.)[0m
+  [0m   [0m  [33m        ^--- Use of undeclared Var boots.core/History[0m
+  [36m147[0m  [36m        (events/listen[0m
+  [36m148[0m  [36m          HistoryEventType/NAVIGATE[0m
+  [36m149[0m  [36m          (fn [event][0m
+  [36m150[0m  [36m              (secretary/dispatch! (.-token event))))[0m
+  [36m151[0m  [36m        (.setEnabled true)))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/boots/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.699 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.701 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.54 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.715 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.587 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.564 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.519 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/boots/core.cljs   line:160  column:4  ----[0m
+
+  [1mNo such namespace: r, could not locate r.cljs, r.cljc, or JavaScript source providing ""[0m
+
+  [36m156[0m  [36m(defn fetch-docs! [][0m
+  [36m157[0m  [36m  (GET "/docs" {:handler #(session/put! :docs %)}))[0m
+  [36m158[0m  [36m[0m
+  [36m159[0m  [36m(defn mount-components [][0m
+  [33m160[0m  [1m  (r/render [#'navbar] (.getElementById js/document "navbar"))[0m
+  [0m   [0m  [33m   ^--- No such namespace: r, could not locate r.cljs, r.cljc, or JavaScript source providing ""[0m
+  [36m161[0m  [36m  (r/render [draggable-button] (.getElementById js/document "app")))[0m
+  [36m162[0m  [36m[0m
+  [36m163[0m  [36m(defn init! [][0m
+  [36m164[0m  [36m  (load-interceptors!)[0m
+  [36m165[0m  [36m  (fetch-docs!)[0m
+
+[36m----  Compiler Warning : Please see src/cljs/boots/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/boots/core.cljs   line:160  column:4  ----[0m
+
+  [1mUse of undeclared Var r/render[0m
+
+  [36m156[0m  [36m(defn fetch-docs! [][0m
+  [36m157[0m  [36m  (GET "/docs" {:handler #(session/put! :docs %)}))[0m
+  [36m158[0m  [36m[0m
+  [36m159[0m  [36m(defn mount-components [][0m
+  [33m160[0m  [1m  (r/render [#'navbar] (.getElementById js/document "navbar"))[0m
+  [0m   [0m  [33m   ^--- Use of undeclared Var r/render[0m
+  [36m161[0m  [36m  (r/render [draggable-button] (.getElementById js/document "app")))[0m
+  [36m162[0m  [36m[0m
+  [36m163[0m  [36m(defn init! [][0m
+  [36m164[0m  [36m  (load-interceptors!)[0m
+  [36m165[0m  [36m  (fetch-docs!)[0m
+
+[36m----  Compiler Warning : Please see src/cljs/boots/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/boots/core.cljs   line:161  column:4  ----[0m
+
+  [1mNo such namespace: r, could not locate r.cljs, r.cljc, or JavaScript source providing ""[0m
+
+  [36m157[0m  [36m  (GET "/docs" {:handler #(session/put! :docs %)}))[0m
+  [36m158[0m  [36m[0m
+  [36m159[0m  [36m(defn mount-components [][0m
+  [36m160[0m  [36m  (r/render [#'navbar] (.getElementById js/document "navbar"))[0m
+  [33m161[0m  [1m  (r/render [draggable-button] (.getElementById js/document "app")))[0m
+  [0m   [0m  [33m   ^--- No such namespace: r, could not locate r.cljs, r.cljc, or JavaScript source providing ""[0m
+  [36m162[0m  [36m[0m
+  [36m163[0m  [36m(defn init! [][0m
+  [36m164[0m  [36m  (load-interceptors!)[0m
+  [36m165[0m  [36m  (fetch-docs!)[0m
+  [36m166[0m  [36m  (hook-browser-navigation!)[0m
+
+[36m----  Compiler Warning : Please see src/cljs/boots/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/boots/core.cljs   line:161  column:4  ----[0m
+
+  [1mUse of undeclared Var r/render[0m
+
+  [36m157[0m  [36m  (GET "/docs" {:handler #(session/put! :docs %)}))[0m
+  [36m158[0m  [36m[0m
+  [36m159[0m  [36m(defn mount-components [][0m
+  [36m160[0m  [36m  (r/render [#'navbar] (.getElementById js/document "navbar"))[0m
+  [33m161[0m  [1m  (r/render [draggable-button] (.getElementById js/document "app")))[0m
+  [0m   [0m  [33m   ^--- Use of undeclared Var r/render[0m
+  [36m162[0m  [36m[0m
+  [36m163[0m  [36m(defn init! [][0m
+  [36m164[0m  [36m  (load-interceptors!)[0m
+  [36m165[0m  [36m  (fetch-docs!)[0m
+  [36m166[0m  [36m  (hook-browser-navigation!)[0m
+
+[36m----  Compiler Warning : Please see src/cljs/boots/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.642 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.534 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/boots/core.cljs   line:146  column:9  ----[0m
+
+  [1mUse of undeclared Var boots.core/History[0m
+
+  [36m142[0m  [36m;; -------------------------[0m
+  [36m143[0m  [36m;; History[0m
+  [36m144[0m  [36m;; must be called after routes have been defined[0m
+  [36m145[0m  [36m(defn hook-browser-navigation! [][0m
+  [33m146[0m  [1m  (doto (History.)[0m
+  [0m   [0m  [33m        ^--- Use of undeclared Var boots.core/History[0m
+  [36m147[0m  [36m        (events/listen[0m
+  [36m148[0m  [36m          HistoryEventType/NAVIGATE[0m
+  [36m149[0m  [36m          (fn [event][0m
+  [36m150[0m  [36m              (secretary/dispatch! (.-token event))))[0m
+  [36m151[0m  [36m        (.setEnabled true)))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/boots/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/boots/core.cljs   line:146  column:9  ----[0m
+
+  [1mUse of undeclared Var boots.core/History[0m
+
+  [36m142[0m  [36m;; -------------------------[0m
+  [36m143[0m  [36m;; History[0m
+  [36m144[0m  [36m;; must be called after routes have been defined[0m
+  [36m145[0m  [36m(defn hook-browser-navigation! [][0m
+  [33m146[0m  [1m  (doto (History.)[0m
+  [0m   [0m  [33m        ^--- Use of undeclared Var boots.core/History[0m
+  [36m147[0m  [36m        (events/listen[0m
+  [36m148[0m  [36m          HistoryEventType/NAVIGATE[0m
+  [36m149[0m  [36m          (fn [event][0m
+  [36m150[0m  [36m              (secretary/dispatch! (.-token event))))[0m
+  [36m151[0m  [36m        (.setEnabled true)))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/boots/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.51 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/boots/core.cljs   line:165  column:4  ----[0m
+
+  [1mUse of undeclared Var boots.core/hook-browser-navigation![0m
+
+  [36m162[0m  [36m(defn init! [][0m
+  [36m163[0m  [36m  (load-interceptors!)[0m
+  [36m164[0m  [36m  (fetch-docs!)[0m
+  [33m165[0m  [1m  (hook-browser-navigation!)[0m
+  [0m   [0m  [33m   ^--- Use of undeclared Var boots.core/hook-browser-navigation![0m
+  [36m166[0m  [36m  (mount-components))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/boots/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.481 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.442 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.43 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.476 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.455 seconds.[0m
+[36m----  Could not Analyze  src/cljs/boots/core.cljs  ----[0m
+
+  [1mNo such namespace: cljs-http.client, could not locate cljs_http/client.cljs, cljs_http/client.cljc, or JavaScript source providing "cljs-http.client" [0m
+
+[36m----  Analysis Error : Please see src/cljs/boots/core.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.613 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/boots/core.cljs   line:165  column:4  ----[0m
+
+  [1mUse of undeclared Var boots.core/fetch-docs![0m
+
+  [36m161[0m  [36m  (reagent/render [draggable-button] (.getElementById js/document "app")))[0m
+  [36m162[0m  [36m[0m
+  [36m163[0m  [36m(defn init! [][0m
+  [36m164[0m  [36m  (load-interceptors!)[0m
+  [33m165[0m  [1m  (fetch-docs!)[0m
+  [0m   [0m  [33m   ^--- Use of undeclared Var boots.core/fetch-docs![0m
+  [36m166[0m  [36m  (hook-browser-navigation!)[0m
+  [36m167[0m  [36m  (mount-components))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/boots/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.731 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.572 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.562 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.537 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.337 seconds.[0m
+[36m----  Could not Analyze  src/cljs/boots/core.cljs   line:112  column:1  ----[0m
+
+  [1mUnable to resolve var: home-page in this context at line 112 src/cljs/boots/core.cljs[0m
+
+  [33m112[0m  [1m(def pages[0m
+  [0m   [0m  [33m^--- Unable to resolve var: home-page in this context at line 112 src/cljs/boots/core.cljs[0m
+  [36m113[0m  [36m  {:home #'home-page[0m
+  [36m114[0m  [36m   :about #'about-page})[0m
+
+[36m----  Analysis Error : Please see src/cljs/boots/core.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.583 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.451 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.442 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.448 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.501 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.475 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.441 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/boots/core.cljs   line:111  column:10  ----[0m
+
+  [1mUse of undeclared Var reagent.validation/isemail?[0m
+
+  [36m107[0m  [36m      "Drag me"])])[0m
+  [36m108[0m  [36m[0m
+  [36m109[0m  [36m(defn home-page [][0m
+  [36m110[0m  [36m  [:div.container[0m
+  [33m111[0m  [1m   [:h1 (utils/isemail? "abc")]])[0m
+  [0m   [0m  [33m         ^--- Use of undeclared Var reagent.validation/isemail?[0m
+  [36m112[0m  [36m[0m
+  [36m113[0m  [36m(def pages[0m
+  [36m114[0m  [36m  {:home #'draggable-button[0m
+  [36m115[0m  [36m   :about #'about-page})[0m
+
+[36m----  Compiler Warning : Please see src/cljs/boots/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.533 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/boots/core.cljs   line:111  column:10  ----[0m
+
+  [1mUse of undeclared Var reagent.validation/isemail?[0m
+
+  [36m107[0m  [36m      "Drag me"])])[0m
+  [36m108[0m  [36m[0m
+  [36m109[0m  [36m(defn home-page [][0m
+  [36m110[0m  [36m  [:div.container[0m
+  [33m111[0m  [1m   [:h1 (utils/isemail? "abc")]])[0m
+  [0m   [0m  [33m         ^--- Use of undeclared Var reagent.validation/isemail?[0m
+  [36m112[0m  [36m[0m
+  [36m113[0m  [36m(def pages[0m
+  [36m114[0m  [36m  {:home #'draggable-button[0m
+  [36m115[0m  [36m   :about #'about-page})[0m
+
+[36m----  Compiler Warning : Please see src/cljs/boots/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.47 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/boots/core.cljs   line:111  column:10  ----[0m
+
+  [1mUse of undeclared Var reagent.validation/isemail?[0m
+
+  [36m107[0m  [36m      "Drag me"])])[0m
+  [36m108[0m  [36m[0m
+  [36m109[0m  [36m(defn home-page [][0m
+  [36m110[0m  [36m  [:div[0m
+  [33m111[0m  [1m   [:h1 (utils/isemail? "abc")]])[0m
+  [0m   [0m  [33m         ^--- Use of undeclared Var reagent.validation/isemail?[0m
+  [36m112[0m  [36m[0m
+  [36m113[0m  [36m(def pages[0m
+  [36m114[0m  [36m  {:home #'draggable-button[0m
+  [36m115[0m  [36m   :about #'about-page})[0m
+
+[36m----  Compiler Warning : Please see src/cljs/boots/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.521 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.424 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.466 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.466 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.456 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.255 seconds.[0m
+[36m----  Could not Analyze  src/cljs/boots/core.cljs  ----[0m
+
+  [1mNo such namespace: reagent, could not locate reagent.cljs, reagent.cljc, or JavaScript source providing "reagent" [0m
+
+[36m----  Analysis Error : Please see src/cljs/boots/core.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/boots/core.cljs   line:110  column:14  ----[0m
+
+  [1mUse of undeclared Var reagent.crypt/is-email?[0m
+
+  [36m106[0m  [36m       :on-mouse-down mouse-down-handler}[0m
+  [36m107[0m  [36m      "Drag me"])])[0m
+  [36m108[0m  [36m[0m
+  [36m109[0m  [36m(defn home-page [][0m
+  [33m110[0m  [1m  [:h1 (str (utils/is-email? "abc"))])[0m
+  [0m   [0m  [33m             ^--- Use of undeclared Var reagent.crypt/is-email?[0m
+  [36m111[0m  [36m[0m
+  [36m112[0m  [36m(def pages[0m
+  [36m113[0m  [36m  {:home #'draggable-button[0m
+  [36m114[0m  [36m   :about #'about-page})[0m
+
+[36m----  Compiler Warning : Please see src/cljs/boots/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.512 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.282 seconds.[0m
+[36m----  Could not Analyze  src/cljs/boots/core.cljs  ----[0m
+
+  [1mNo such namespace: soda-ash.core, could not locate soda_ash/core.cljs, soda_ash/core.cljc, or JavaScript source providing "soda-ash.core" [0m
+
+[36m----  Analysis Error : Please see src/cljs/boots/core.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.618 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.577 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.624 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/boots/core.cljs   line:111  column:4  ----[0m
+
+  [1mUse of undeclared Var soda-ash.core/AppBar[0m
+
+  [36m107[0m  [36m       :on-mouse-down mouse-down-handler}[0m
+  [36m108[0m  [36m      "Drag me"])])[0m
+  [36m109[0m  [36m[0m
+  [36m110[0m  [36m(defn home-page [][0m
+  [33m111[0m  [1m  [sa/AppBar "Select a Photo"][0m
+  [0m   [0m  [33m   ^--- Use of undeclared Var soda-ash.core/AppBar[0m
+  [36m112[0m  [36m  #_[sa/Modal #_{:trigger (reagent/as-element [sa/Button "Show Modal"])}[0m
+  [36m113[0m  [36m     [sa/ModalHeader "Select a Photo"][0m
+  [36m114[0m  [36m   [sa/ModalContent {:image true}[0m
+  [36m115[0m  [36m    [sa/Image {:wrapped true[0m
+  [36m116[0m  [36m               :size    "medium"[0m
+
+[36m----  Compiler Warning : Please see src/cljs/boots/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.603 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/boots/core.cljs   line:111  column:4  ----[0m
+
+  [1mUse of undeclared Var soda-ash.core/appbar[0m
+
+  [36m107[0m  [36m       :on-mouse-down mouse-down-handler}[0m
+  [36m108[0m  [36m      "Drag me"])])[0m
+  [36m109[0m  [36m[0m
+  [36m110[0m  [36m(defn home-page [][0m
+  [33m111[0m  [1m  [sa/appbar "Select a Photo"][0m
+  [0m   [0m  [33m   ^--- Use of undeclared Var soda-ash.core/appbar[0m
+  [36m112[0m  [36m  #_[sa/Modal #_{:trigger (reagent/as-element [sa/Button "Show Modal"])}[0m
+  [36m113[0m  [36m     [sa/ModalHeader "Select a Photo"][0m
+  [36m114[0m  [36m   [sa/ModalContent {:image true}[0m
+  [36m115[0m  [36m    [sa/Image {:wrapped true[0m
+  [36m116[0m  [36m               :size    "medium"[0m
+
+[36m----  Compiler Warning : Please see src/cljs/boots/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.505 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/boots/core.cljs   line:111  column:4  ----[0m
+
+  [1mUse of undeclared Var soda-ash.core/table[0m
+
+  [36m107[0m  [36m       :on-mouse-down mouse-down-handler}[0m
+  [36m108[0m  [36m      "Drag me"])])[0m
+  [36m109[0m  [36m[0m
+  [36m110[0m  [36m(defn home-page [][0m
+  [33m111[0m  [1m  [sa/table][0m
+  [0m   [0m  [33m   ^--- Use of undeclared Var soda-ash.core/table[0m
+  [36m112[0m  [36m  #_[sa/Modal #_{:trigger (reagent/as-element [sa/Button "Show Modal"])}[0m
+  [36m113[0m  [36m     [sa/ModalHeader "Select a Photo"][0m
+  [36m114[0m  [36m   [sa/ModalContent {:image true}[0m
+  [36m115[0m  [36m    [sa/Image {:wrapped true[0m
+  [36m116[0m  [36m               :size    "medium"[0m
+
+[36m----  Compiler Warning : Please see src/cljs/boots/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.537 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.492 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.54 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.471 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.448 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.449 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.453 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.475 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.441 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.445 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/boots/core.cljs   line:111  column:4  ----[0m
+
+  [1mUse of undeclared Var soda-ash.core/Comment[0m
+
+  [36m107[0m  [36m       :on-mouse-down mouse-down-handler}[0m
+  [36m108[0m  [36m      "Drag me"])])[0m
+  [36m109[0m  [36m[0m
+  [36m110[0m  [36m(defn home-page [][0m
+  [33m111[0m  [1m  [sa/Comment sdhjs][0m
+  [0m   [0m  [33m   ^--- Use of undeclared Var soda-ash.core/Comment[0m
+  [36m112[0m  [36m  #_[sa/Modal #_{:trigger (reagent/as-element [sa/Button "Show Modal"])}[0m
+  [36m113[0m  [36m     [sa/ModalHeader "Select a Photo"][0m
+  [36m114[0m  [36m   [sa/ModalContent {:image true}[0m
+  [36m115[0m  [36m    [sa/Image {:wrapped true[0m
+  [36m116[0m  [36m               :size    "medium"[0m
+
+[36m----  Compiler Warning : Please see src/cljs/boots/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/boots/core.cljs   line:111  column:15  ----[0m
+
+  [1mUse of undeclared Var boots.core/sdhjs[0m
+
+  [36m107[0m  [36m       :on-mouse-down mouse-down-handler}[0m
+  [36m108[0m  [36m      "Drag me"])])[0m
+  [36m109[0m  [36m[0m
+  [36m110[0m  [36m(defn home-page [][0m
+  [33m111[0m  [1m  [sa/Comment sdhjs][0m
+  [0m   [0m  [33m              ^--- Use of undeclared Var boots.core/sdhjs[0m
+  [36m112[0m  [36m  #_[sa/Modal #_{:trigger (reagent/as-element [sa/Button "Show Modal"])}[0m
+  [36m113[0m  [36m     [sa/ModalHeader "Select a Photo"][0m
+  [36m114[0m  [36m   [sa/ModalContent {:image true}[0m
+  [36m115[0m  [36m    [sa/Image {:wrapped true[0m
+  [36m116[0m  [36m               :size    "medium"[0m
+
+[36m----  Compiler Warning : Please see src/cljs/boots/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.485 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/boots/core.cljs   line:111  column:4  ----[0m
+
+  [1mUse of undeclared Var soda-ash.core/Comment[0m
+
+  [36m107[0m  [36m       :on-mouse-down mouse-down-handler}[0m
+  [36m108[0m  [36m      "Drag me"])])[0m
+  [36m109[0m  [36m[0m
+  [36m110[0m  [36m(defn home-page [][0m
+  [33m111[0m  [1m  [sa/Comment "ajska"][0m
+  [0m   [0m  [33m   ^--- Use of undeclared Var soda-ash.core/Comment[0m
+  [36m112[0m  [36m  #_[sa/Modal #_{:trigger (reagent/as-element [sa/Button "Show Modal"])}[0m
+  [36m113[0m  [36m     [sa/ModalHeader "Select a Photo"][0m
+  [36m114[0m  [36m   [sa/ModalContent {:image true}[0m
+  [36m115[0m  [36m    [sa/Image {:wrapped true[0m
+  [36m116[0m  [36m               :size    "medium"[0m
+
+[36m----  Compiler Warning : Please see src/cljs/boots/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.538 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.505 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.441 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.429 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.446 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.569 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.425 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.427 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.422 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.451 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.465 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.431 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.424 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.433 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.439 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.427 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.428 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.417 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.459 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.426 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.42 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.441 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.418 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.419 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.425 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.435 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.376 seconds.[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/boots/core.cljs   line:112  column:18  ----[0m
+
+  [1mUse of undeclared Var boots.core/ordered[0m
+
+  [36m108[0m  [36m      "Drag me"])])[0m
+  [36m109[0m  [36m[0m
+  [36m110[0m  [36m(defn home-page [][0m
+  [36m111[0m  [36m  [:div[0m
+  [33m112[0m  [1m   [sa/StepGroup ordered[0m
+  [0m   [0m  [33m                 ^--- Use of undeclared Var boots.core/ordered[0m
+  [36m113[0m  [36m    [sa/Step completed[0m
+  [36m114[0m  [36m     [sa/StepContent[0m
+  [36m115[0m  [36m      [sa/StepTitle "Shipping"][0m
+  [36m116[0m  [36m      [sa/StepDescription "Hello world"]]]]][0m
+  [36m117[0m  [36m  #_[sa/Modal #_{:trigger (reagent/as-element [sa/Button "Show Modal"])}[0m
+
+[36m----  Compiler Warning : Please see src/cljs/boots/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/boots/core.cljs   line:113  column:14  ----[0m
+
+  [1mUse of undeclared Var boots.core/completed[0m
+
+  [36m110[0m  [36m(defn home-page [][0m
+  [36m111[0m  [36m  [:div[0m
+  [36m112[0m  [36m   [sa/StepGroup ordered[0m
+  [33m113[0m  [1m    [sa/Step completed[0m
+  [0m   [0m  [33m             ^--- Use of undeclared Var boots.core/completed[0m
+  [36m114[0m  [36m     [sa/StepContent[0m
+  [36m115[0m  [36m      [sa/StepTitle "Shipping"][0m
+  [36m116[0m  [36m      [sa/StepDescription "Hello world"]]]]][0m
+  [36m117[0m  [36m  #_[sa/Modal #_{:trigger (reagent/as-element [sa/Button "Show Modal"])}[0m
+  [36m118[0m  [36m     [sa/ModalHeader "Select a Photo"][0m
+
+[36m----  Compiler Warning : Please see src/cljs/boots/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.476 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.433 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.435 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/boots/core.cljs   line:112  column:5  ----[0m
+
+  [1mUse of undeclared Var soda-ash.core/BreadcrumSection[0m
+
+  [36m108[0m  [36m      "Drag me"])])[0m
+  [36m109[0m  [36m[0m
+  [36m110[0m  [36m(defn home-page [][0m
+  [36m111[0m  [36m  [sa/Breadcrumb[0m
+  [33m112[0m  [1m   [sa/BreadcrumSection "Home"][0m
+  [0m   [0m  [33m    ^--- Use of undeclared Var soda-ash.core/BreadcrumSection[0m
+  [36m113[0m  [36m   [sa/BreadcrumbDivider /][0m
+  [36m114[0m  [36m   [sa/BreadcrumSection "About"]][0m
+  [36m115[0m  [36m  #_[sa/Modal #_{:trigger (reagent/as-element [sa/Button "Show Modal"])}[0m
+  [36m116[0m  [36m     [sa/ModalHeader "Select a Photo"][0m
+  [36m117[0m  [36m   [sa/ModalContent {:image true}[0m
+
+[36m----  Compiler Warning : Please see src/cljs/boots/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/boots/core.cljs   line:114  column:5  ----[0m
+
+  [1mUse of undeclared Var soda-ash.core/BreadcrumSection[0m
+
+  [36m110[0m  [36m(defn home-page [][0m
+  [36m111[0m  [36m  [sa/Breadcrumb[0m
+  [36m112[0m  [36m   [sa/BreadcrumSection "Home"][0m
+  [36m113[0m  [36m   [sa/BreadcrumbDivider /][0m
+  [33m114[0m  [1m   [sa/BreadcrumSection "About"]][0m
+  [0m   [0m  [33m    ^--- Use of undeclared Var soda-ash.core/BreadcrumSection[0m
+  [36m115[0m  [36m  #_[sa/Modal #_{:trigger (reagent/as-element [sa/Button "Show Modal"])}[0m
+  [36m116[0m  [36m     [sa/ModalHeader "Select a Photo"][0m
+  [36m117[0m  [36m   [sa/ModalContent {:image true}[0m
+  [36m118[0m  [36m    [sa/Image {:wrapped true[0m
+  [36m119[0m  [36m               :size    "medium"[0m
+
+[36m----  Compiler Warning : Please see src/cljs/boots/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.513 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/boots/core.cljs   line:114  column:5  ----[0m
+
+  [1mUse of undeclared Var soda-ash.core/BreadcrumSection[0m
+
+  [36m110[0m  [36m(defn home-page [][0m
+  [36m111[0m  [36m  [sa/Breadcrumb[0m
+  [36m112[0m  [36m   [sa/BreadcrumbSection "Home"][0m
+  [36m113[0m  [36m   [sa/BreadcrumbDivider /][0m
+  [33m114[0m  [1m   [sa/BreadcrumSection "About"]][0m
+  [0m   [0m  [33m    ^--- Use of undeclared Var soda-ash.core/BreadcrumSection[0m
+  [36m115[0m  [36m  #_[sa/Modal #_{:trigger (reagent/as-element [sa/Button "Show Modal"])}[0m
+  [36m116[0m  [36m     [sa/ModalHeader "Select a Photo"][0m
+  [36m117[0m  [36m   [sa/ModalContent {:image true}[0m
+  [36m118[0m  [36m    [sa/Image {:wrapped true[0m
+  [36m119[0m  [36m               :size    "medium"[0m
+
+[36m----  Compiler Warning : Please see src/cljs/boots/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.447 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.443 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.417 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.415 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.434 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.419 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.416 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.436 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/boots/core.cljs   line:114  column:33  ----[0m
+
+  [1mUse of undeclared Var boots.core/active[0m
+
+  [36m110[0m  [36m(defn home-page [][0m
+  [36m111[0m  [36m  [sa/Breadcrumb[0m
+  [36m112[0m  [36m   [sa/BreadcrumbSection {:link true} "Home"][0m
+  [36m113[0m  [36m   [sa/BreadcrumbDivider][0m
+  [33m114[0m  [1m   [sa/BreadcrumbSection {:link active}"About"][0m
+  [0m   [0m  [33m                                ^--- Use of undeclared Var boots.core/active[0m
+  [36m115[0m  [36m   [sa/BreadcrumbDivider][0m
+  [36m116[0m  [36m   [sa/BreadcrumbSection "Tshirts"]][0m
+  [36m117[0m  [36m  #_[sa/Modal #_{:trigger (reagent/as-element [sa/Button "Show Modal"])}[0m
+  [36m118[0m  [36m     [sa/ModalHeader "Select a Photo"][0m
+  [36m119[0m  [36m   [sa/ModalContent {:image true}[0m
+
+[36m----  Compiler Warning : Please see src/cljs/boots/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.455 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.418 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.45 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/boots/core.cljs   line:113  column:6  ----[0m
+
+  [1mUse of undeclared Var soda-ash.core/Dropdownitem[0m
+
+  [36m110[0m  [36m(defn home-page [][0m
+  [36m111[0m  [36m  [sa/Dropdown {:text "File"}[0m
+  [36m112[0m  [36m   [sa/DropdownMenu[0m
+  [33m113[0m  [1m    [sa/Dropdownitem {:text "New"}][0m
+  [0m   [0m  [33m     ^--- Use of undeclared Var soda-ash.core/Dropdownitem[0m
+  [36m114[0m  [36m    [sa/Dropdownitem {:text "New"}][0m
+  [36m115[0m  [36m    [sa/DropdownDivider][0m
+  [36m116[0m  [36m    [sa/Dropdownitem {:text "New"}][0m
+  [36m117[0m  [36m    [sa/Dropdownitem {:text "New"}]]][0m
+  [36m118[0m  [36m  #_[sa/Modal #_{:trigger (reagent/as-element [sa/Button "Show Modal"])}[0m
+
+[36m----  Compiler Warning : Please see src/cljs/boots/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/boots/core.cljs   line:114  column:6  ----[0m
+
+  [1mUse of undeclared Var soda-ash.core/Dropdownitem[0m
+
+  [36m110[0m  [36m(defn home-page [][0m
+  [36m111[0m  [36m  [sa/Dropdown {:text "File"}[0m
+  [36m112[0m  [36m   [sa/DropdownMenu[0m
+  [36m113[0m  [36m    [sa/Dropdownitem {:text "New"}][0m
+  [33m114[0m  [1m    [sa/Dropdownitem {:text "New"}][0m
+  [0m   [0m  [33m     ^--- Use of undeclared Var soda-ash.core/Dropdownitem[0m
+  [36m115[0m  [36m    [sa/DropdownDivider][0m
+  [36m116[0m  [36m    [sa/Dropdownitem {:text "New"}][0m
+  [36m117[0m  [36m    [sa/Dropdownitem {:text "New"}]]][0m
+  [36m118[0m  [36m  #_[sa/Modal #_{:trigger (reagent/as-element [sa/Button "Show Modal"])}[0m
+  [36m119[0m  [36m     [sa/ModalHeader "Select a Photo"][0m
+
+[36m----  Compiler Warning : Please see src/cljs/boots/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/boots/core.cljs   line:116  column:6  ----[0m
+
+  [1mUse of undeclared Var soda-ash.core/Dropdownitem[0m
+
+  [36m112[0m  [36m [sa/DropdownMenu[0m
+  [36m113[0m  [36m  [sa/Dropdownitem {:text "New"}][0m
+  [36m114[0m  [36m  [sa/Dropdownitem {:text "New"}][0m
+  [36m115[0m  [36m  [sa/DropdownDivider][0m
+  [33m116[0m  [1m  [sa/Dropdownitem {:text "New"}][0m
+  [0m   [0m  [33m   ^--- Use of undeclared Var soda-ash.core/Dropdownitem[0m
+  [36m117[0m  [36m  [sa/Dropdownitem {:text "New"}]]][0m
+  [36m118[0m  [36m#_[sa/Modal #_{:trigger (reagent/as-element [sa/Button "Show Modal"])}[0m
+  [36m119[0m  [36m   [sa/ModalHeader "Select a Photo"][0m
+  [36m120[0m  [36m [sa/ModalContent {:image true}[0m
+  [36m121[0m  [36m  [sa/Image {:wrapped true[0m
+
+[36m----  Compiler Warning : Please see src/cljs/boots/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/boots/core.cljs   line:117  column:6  ----[0m
+
+  [1mUse of undeclared Var soda-ash.core/Dropdownitem[0m
+
+  [36m113[0m  [36m  [sa/Dropdownitem {:text "New"}][0m
+  [36m114[0m  [36m  [sa/Dropdownitem {:text "New"}][0m
+  [36m115[0m  [36m  [sa/DropdownDivider][0m
+  [36m116[0m  [36m  [sa/Dropdownitem {:text "New"}][0m
+  [33m117[0m  [1m  [sa/Dropdownitem {:text "New"}]]][0m
+  [0m   [0m  [33m   ^--- Use of undeclared Var soda-ash.core/Dropdownitem[0m
+  [36m118[0m  [36m#_[sa/Modal #_{:trigger (reagent/as-element [sa/Button "Show Modal"])}[0m
+  [36m119[0m  [36m   [sa/ModalHeader "Select a Photo"][0m
+  [36m120[0m  [36m [sa/ModalContent {:image true}[0m
+  [36m121[0m  [36m  [sa/Image {:wrapped true[0m
+  [36m122[0m  [36m             :size    "medium"[0m
+
+[36m----  Compiler Warning : Please see src/cljs/boots/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.5 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.415 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.417 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.416 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.405 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.428 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.4 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.402 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.424 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/boots/core.js

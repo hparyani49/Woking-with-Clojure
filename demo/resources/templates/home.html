@@ -3,16 +3,15 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Welcome to boots</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css">
+        <title>Welcome to demo</title>
     </head>
     <body>
-        <div id="navbar"></div>
+
         <div id="app">
             <div class="container-fluid">
                 <div class="card-deck">
                     <div class="card-block">
-                        <h4>Welcome to boots</h4>
+                        <h4>Welcome to demo</h4>
                         <p>If you're seeing this message, that means you haven't yet compiled your ClojureScript!</p>
                         <p>Please run <code>lein figwheel</code> to start the ClojureScript compiler and reload the page.</p>
                         <h4>For better ClojureScript development experience in Chrome follow these steps:</h4>
@@ -33,6 +32,7 @@
         {% style "/assets/bootstrap/css/bootstrap.min.css" %}
         {% style "/assets/font-awesome/css/font-awesome.min.css" %}
         {% style "/css/screen.css" %}
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
         <script type="text/javascript">
          var context = "{{servlet-context}}";
          var csrfToken = "{{csrf-token}}";
