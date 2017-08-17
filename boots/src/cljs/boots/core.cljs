@@ -10,23 +10,71 @@
             [boots.ajax :refer [load-interceptors!]]
             [ajax.core :refer [GET POST]]
             [cljs.core.async :refer (<!)]
-            [soda-ash.core :as sa])
+            [soda-ash.core :as sa]
+            [boots.calendar :as cal]
+            [reagent-material-ui.core :as ui])
   (:import [goog.events EventType]))
 
+(def el reagent/as-element)
+(defn icon [nme] [ui/FontIcon {:className "material-icons"} nme])
+(defn color [nme] (aget ui/colors nme))
+
+(defonce theme-defaults {:muiTheme (ui/getMuiTheme
+                                    (-> ui/darkBaseTheme
+                                        (js->clj :keywordize-keys true)
+                                        (update :palette merge {:primary1Color (color "amber500")
+                                                                :primary2Color (color "amber700")})
+                                        clj->js))})
+
+(defn simple-nav []
+  (let [is-open? (atom false)
+        close #(reset! is-open? false)]
+    (fn []
+      [:div
+       [ui/AppBar {:title "yipgo" :onLeftIconButtonTouchTap #(reset! is-open? true)}]
+       [ui/Drawer {:open @is-open? :docked false}
+        [ui/List
+         [ui/ListItem {:leftIcon (el [:i.material-icons "home"])
+                       :on-click (fn []
+                                   (accountant/navigate! "/")
+                                   (close))}
+          "Home"]
+         [ui/Divider]
+         (for [[doc details] @(rf/subscribe [:docs.list.by-name])]
+           ^{:key doc} [ui/ListItem {:secondaryText "Something something"
+                                     :rightIconButton (el [ui/IconMenu {:iconButtonElement (el [ui/IconButton {:touch true} [icon "more_vert"]])}
+                                                           [ui/MenuItem "Delete"]])
+                                     :onTouchTap (fn []
+                                                   ;; some action or another, then close the menu
+                                                   (close))}
+                        doc])]
+        [new-doc-modal close]]])))
+
+(defn ui-page []
+  [ui/MuiThemeProvider theme-defaults
+   [:div
+    [simple-nav]
+    [:div
+     [:h2 "Welcome to a simple, example application."]]]])
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;Draggable Button
 (enable-console-print!)
 
 (def black-hole-pos {:x 400 :y 400})
 
 (def draggable (reagent/atom {:x 100 :y 100 :alive? true}))
 
-(defn nav-link [uri title page collapsed?]
+#_(defn nav-link [uri title page collapsed?]
   [:li.nav-item
    {:class (when (= page (session/get :page)) "active")}
    [:a.nav-link
     {:href uri
      :on-click #(reset! collapsed? true)} title]])
 
-(defn navbar []
+#_(defn navbar []
   (let [collapsed? (reagent/atom true)]
     (fn []
       [:nav.navbar.navbar-dark.bg-primary
@@ -48,7 +96,8 @@
 ;; Utility functions
 
 (defn close? [x y]
-  (and (< (Math/abs (- x (:x black-hole-pos))) 50)
+  (< (Math/abs (- x (:x black-hole-pos))) 200)
+  #_(and (< (Math/abs (- x (:x black-hole-pos))) 50)
        (< (Math/abs (- y (:y black-hole-pos))) 50)))
 
 
@@ -107,21 +156,29 @@
        :on-mouse-down mouse-down-handler}
       "Drag me"])])
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
 (defn home-page []
-  [sa/Message
-   [sa/MessageHeader "Changes is service"]
-   [:p "Hello world"]]
-  #_[sa/Modal #_{:trigger (reagent/as-element [sa/Button "Show Modal"])}
-     [sa/ModalHeader "Select a Photo"]
-   [sa/ModalContent {:image true}
-    [sa/Image {:wrapped true
-               :size    "medium"
-               :src     "#"}]
-    [sa/ModalDescription
-     [sa/Header "Default Profile Image"]
-     [:p "We've found the following gravatar image associated with your e-mail address."]
-     [:p "Is it okay to use this photo?"]
-     ]]])
+  [sa/Table
+   [sa/TableHeader
+    [sa/TableRow
+     [sa/TableHeaderCell {:colSpan 1 :collapsing true}
+      [sa/Button {:on-click "#"} "<"]]
+     [sa/TableHeaderCell {:colSpan 10 :textAlign "center" :collapsing true}
+      "August"]
+     [sa/TableHeaderCell {:colSpan 1 :collapsing true}
+      [sa/Button {:on-click "#"} ">"]]]]
+   #_[sa/TableBody
+    [sa/TableRow
+     [sa/TableCell {:collapsing true}
+      [sa/Icon {:name "folder"} " Node Modules"]]]]])
+
+(defn calendar []
+  [:div [cal/calendar]])
+
+
 
 (def pages
   {:home #'draggable-button
@@ -156,8 +213,8 @@
   (GET "/docs" {:handler #(session/put! :docs %)}))
 
 (defn mount-components []
-  (reagent/render [#'navbar] (.getElementById js/document "navbar"))
-  (reagent/render [home-page] (.getElementById js/document "app")))
+  #_(reagent/render [#'navbar] (.getElementById js/document "navbar"))
+  (reagent/render [ui-page] (.getElementById js/document "app")))
 
 (defn init! []
   (load-interceptors!)
