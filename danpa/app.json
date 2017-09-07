@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": "danpa",
+    "description": "No description",
+    "slug": "danpa",
+    "sdkVersion": "20.0.0",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "primaryColor": "#cccccc",
+    "privacy": "public",
+    "icon": "./assets/icons/app.png",
+    "notification": {
+      "icon": "./assets/icons/loading.png",
+      "color": "#000000"
+    },
+    "loading": {
+      "icon": "https://s3.amazonaws.com/exp-brand-assets/ExponentEmptyManifest_192.png",
+      "hideExponentText": false
+    },
+    "packagerOpts": {
+      "assetExts": [
+        "ttf",
+        "otf"
+      ],
+      "nonPersistent": ""
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.danpa"
+    },
+    "isDetached": true,
+    "detach": {
+      "scheme": "exp44874010c5ec4d30ab413c8beaa9c613",
+      "androidExpoViewUrl": "https://s3.amazonaws.com/exp-exponent-view-code/android-v1.19.1-sdk20.0.0-5b613054-1239-439f-9c3a-0aad67cbe39a.tar.gz"
+    }
+  }
+}

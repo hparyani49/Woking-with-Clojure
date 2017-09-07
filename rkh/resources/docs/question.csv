@@ -1,0 +1,33 @@
+activity,quest,opt1,opt2,opt3,opt4,ans
+vocab1,boy,man,girl,dog,boy,boy
+vocab1,girl,man,girl,dog,boy,girl
+vocab1,man,man,girl,woman,dog,man
+vocab1,woman,girl,apple,dog,man,woman
+vocab1,apple,man,apple,woman,boy,apple
+vocab2,sahi jodi pehchaniye,aadmi-man,aurat-girl,lakda-apple,safarchand-dog,aadmi-man
+vocab2,sahi jodi pehchaniye,aadmi-girl,aurat-woman,lakda-apple,safarchand-dog,aurat-woman
+vocab2,sahi jodi pehchaniye,aadmi-woman,aurat-girl,safarchand-apple,ladki-boy,safarchand-apple
+vocab2,sahi jodi pehchaniye,aadmi-woman,aurat-girl,lakda-boy,safarchand-dog,ladka-boy
+vocab2,sahi jodi pehchaniye,aadmi-boy,aurat-girl,lakda-apple,kutta-dog,kutta-dog
+vocab3,billi,woman,cat,dog,man,cat
+vocab3,insaan,man,dog,boy,human
+vocab3,janvar,girl,man,animal,dog,animal
+vocab3,khambha,wall,piller,window,fan,piller
+vocab3,deewar,piller,human,fan,wall,wall
+gram1,diye gaye shabdon me se sangya pehchaniye,beautiful,good,fast,boy,boy
+gram1,diye gaye shabdon me se sangya pehchaniye,bad,slow,girl,better,girl
+gram1,diye gaye shabdon me se sangya pehchaniye,bright,dark,go,william,william
+gram1,diye gaye shabdon me se sangya pehchaniye,beautiful,dark,man,went,man
+gram1,diye gaye shabdon me se sangya pehchaniye,bright,goat,bad,slow,goat
+gram2,He is a good ________,girl,boy,woman,dog,boy
+gram2,It is a tall _____,wall,william,time,fire,wall
+gram2,It is a beautiful ______,fire,fast,tree,light,tree
+gram2,See that small _____,dark,puppy,water,light,puppy
+gram2,Kill that ____,he is the culprit,man,wall,time,water,man
+gram3,yeh mera dost hai,he is my friend,he is my friends,they are my friends,he is my enemy,he is my friend
+gram3,mere paise kisne liye,he took my money,they took my money,who took my money,no body took my money,who took my money
+gram3,yeh roshni kaha se aa rahi hai,where is it,where am i,where is this light coming from,where is this,where is this light coming from
+gram3,yeh kaun hai,who is this,who are they,who is he,who is she,who is this
+gram3,mera naam kya hai,what is your name,what is my name,what is his name,what is he doing,what is my name
+
+
