@@ -8,7 +8,7 @@ Download from http://example.com/FIXME.
 
 ## Usage
 
-FIXME: explanation
+Implemented memory-game using atoms.
 
     $ java -jar memory-game-0.1.0-standalone.jar [args]
 

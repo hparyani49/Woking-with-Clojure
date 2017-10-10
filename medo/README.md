@@ -1,8 +1,8 @@
 # demo
-
+Google sign in project in luminus.
 generated using Luminus version "2.9.11.78"
 
-FIXME
+Implemented google sign in feature.
 
 ## Prerequisites
 
@@ -14,7 +14,7 @@ You will need [Leiningen][1] 2.0 or above installed.
 
 To start a web server for the application, run:
 
-    lein run 
+    lein run
 
 ## License
 

@@ -1,7 +1,7 @@
-## danpa
+## testing-app
 
 ### Usage
- - used for implementing facebook login using expo and react-native.
+
 #### Install Expo [XDE and mobile client](https://docs.expo.io/versions/v15.0.0/introduction/installation.html)
     If you don't want to use XDE (not IDE, it stands for Expo Development Tools), you can use [exp CLI](https://docs.expo.io/versions/v15.0.0/guides/exp-cli.html).
 

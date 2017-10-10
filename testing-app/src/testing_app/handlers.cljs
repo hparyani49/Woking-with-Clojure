@@ -1,8 +1,8 @@
-(ns panda.handlers
+(ns testing-app.handlers
   (:require
     [re-frame.core :refer [reg-event-db ->interceptor reg-event-fx reg-fx]]
     [clojure.spec.alpha :as s]
-    [panda.db :as db :refer [app-db]]))
+    [testing-app.db :as db :refer [app-db]]))
 
 ;; -- Interceptors ----------------------------------------------------------
 ;;
@@ -15,7 +15,7 @@
     (let [explain-data (s/explain-data spec db)]
       (throw (ex-info (str "Spec check failed: " explain-data) explain-data)))))
 
-(def validate-spec
+(defn validate-spec
   (if goog.DEBUG
     (->interceptor
         :id :validate-spec
@@ -51,6 +51,27 @@
                    (fn [error]
                      (js/alert "Error" (str error))))))))
 
+   (http-post action data on-success headers
+
+              nil))
+  ([action data on-success headers on-error]
+   (-> (.fetch js/window
+               (str action)
+               (clj->js {:method "POST"
+                         :headers (merge {:accept "application/json"
+                                          :content-type "application/json"}
+                                         headers)
+                         :body (.stringify js/JSON (clj->js data))}))
+       (.then (fn [response]
+                (.text response)))
+       (.then (fn [text]
+                (let [json (.parse js/JSON text)
+                      obj (js->clj json :keywordize-keys true)]
+                  (on-success obj))))
+       (.catch (or on-error
+                   (fn [error]
+                     (js/alert "Error" (str error))))))))
+
 ;; -- Handlers --------------------------------------------------------------
 
 (reg-event-db
@@ -60,21 +81,15 @@
     app-db))
 
 (reg-event-db
- :set-greeting
- [validate-spec]
- (fn [db [_ value]]
-   (assoc db :greeting value)))
-
-(reg-event-db
- :set-page
- [validate-spec]
- (fn [db [_ value]]
-   (assoc db :page value)))
+  :set-greeting
+  [validate-spec]
+  (fn [db [_ value]]
+    (assoc db :greeting value)))
 
 (reg-fx
  :get-books
  (fn [params]
-   (http-get "http://22802d53.ngrok.io/books" #(js/alert %) #(js/alert %))))
+   (http-post "http://22802d53.ngrok.io/act-lvl" {:book "No David"} #(js/alert %) #(js/alert %))))
 
 (reg-event-fx
  :get-books

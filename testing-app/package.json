@@ -1,5 +1,5 @@
 {
-  "name": "panda",
+  "name": "testing-app",
   "version": "0.0.1",
   "description": "",
   "author": "",
@@ -7,8 +7,8 @@
   "main": "main.js",
   "dependencies": {
     "create-react-class": "15.6.0",
+    "expo": "^20.0.0",
     "expo-three": "^2.0.2",
-    "exponent": "^14.0.0",
     "react": "16.0.0-alpha.12",
     "react-native": "https://github.com/expo/react-native/archive/sdk-20.0.0.tar.gz",
     "three": "^0.87.1"

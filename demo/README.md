@@ -1,10 +1,10 @@
 # demo
-
+Implemented facebook login in re-natal using react-native-facebook-login
 A Clojure library designed to ... well, that part is up to you.
 
 ## Usage
 
-FIXME
+Implemented facebook login using re-natal and react-native-facebook-login.
 
 ## License
 

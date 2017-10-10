@@ -2,7 +2,7 @@
 
 generated using Luminus version "2.9.11.76"
 
-FIXME
+A basic cljs luminus template usage to build todo program.
 
 ## Prerequisites
 
@@ -14,7 +14,7 @@ You will need [Leiningen][1] 2.0 or above installed.
 
 To start a web server for the application, run:
 
-    lein run 
+    lein run
 
 ## License
 

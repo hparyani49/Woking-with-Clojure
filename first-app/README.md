@@ -8,7 +8,7 @@ Download from http://example.com/FIXME.
 
 ## Usage
 
-FIXME: explanation
+Implemented higher level functions of clojure like map, reduce, sort etc.
 
     $ java -jar first-app-0.1.0-standalone.jar [args]
 
